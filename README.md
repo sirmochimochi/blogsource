@@ -1,3 +1,3 @@
 # blogsources
 
-for my blog  
+programs for my blog article  
