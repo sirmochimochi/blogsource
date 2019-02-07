@@ -1,6 +1,4 @@
 /* 動画からフレームを取り出して処理を行い再び動画にするプログラムの例*/
-
-#include "Image.h"
 #include <opencv2/videoio.hpp> //OpenCVでビデオを読み書きするメソッドのヘッダ
 #include <opencv2/highgui.hpp> //waitKey()やimshow()などの便利なGUI用メソッドのヘッダ
 #include <iostream>
@@ -37,7 +35,6 @@ int main(int argc, const char* argv[])
 	if (!writer.isOpened()) return -1; 
 
 
-	Image image;
 	Mat frame;
 	int framecounter = 1; //現在のフレーム数
 	for (;;)
@@ -48,8 +45,11 @@ int main(int argc, const char* argv[])
 		if (!frame.empty()) {
 			/******* ここに抽出したフレームの処理を記述 ******/
 
-			//例えばガンマ補正したり？
-			image.correctGamma(frame, 0.5);
+
+
+			//お好きな処理を
+			
+
 
 			/*************************************************/
 
@@ -59,7 +59,7 @@ int main(int argc, const char* argv[])
 			//出力されたフレームを確認
 			namedWindow("current frame", WINDOW_NORMAL); //↓のために必要
 			resizeWindow("current frame", width / 4, hight / 4); //確認用のため小さく表示
-			imshow("current frame", frame);
+			imshow("current frame", frame); //フレームを表示
 			printf("%d frame process complete...\n", framecounter++);
 		}
 		if (waitKey(30) >= 0) break; //30ミリ秒以内にキーが押されなければループ継続
