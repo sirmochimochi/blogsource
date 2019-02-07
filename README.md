@@ -1,3 +1,3 @@
 # blogsources
 
-ブログ用に作成したプログラムのまとめです。
+for my blog  
